@@ -6,7 +6,7 @@ A [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for [Hy]
 
 ```bash
 pip install cookiecutter
-cookiecutter gh:kovan/hy
+cookiecutter gh:kovan/cookiecutter-hy
 ```
 
 You'll be prompted for:
