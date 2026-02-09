@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "{project_name}"
+version = "0.1.0"
+description = "A Hy project"
+authors = []
+license = "MIT"
+packages = [{include = "{module_name}", from = "src"}]
+
+[tool.poetry.dependencies]
+hy = {version = ">=1.0", python = "{hy_python_requires}"}
+
+[build-system]
+requires = ["poetry-core", "hy >= 1.0"]
+build-backend = "poetry.core.masonry.api"
