@@ -1,43 +1,44 @@
-# hy-templates
+# cookiecutter-hy
 
-Project templates for bootstrapping [Hy](https://hylang.org/) (a Lisp embedded in Python) projects.
+A [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for [Hy](https://hylang.org/) projects.
 
-## Templates
+## Usage
 
-| Tool | Directory | Install | Usage |
-|------|-----------|---------|-------|
-| **Cookiecutter** | [cookiecutter/](cookiecutter/) | `pip install cookiecutter` | `cookiecutter gh:kovan/hy --directory cookiecutter` |
-| **PDM** | *(uses cookiecutter)* | `pip install cookiecutter` | `pdm init --cookiecutter gh:kovan/hy --directory cookiecutter` |
-| **Poetry** | [poetry/](poetry/) | `poetry self add poetry-hy-plugin` | `poetry new-hy my-project` |
-| **Hatch** | [hatch/](hatch/) | `pipx inject hatch hatch-hy` | `hatch new my-project` |
+```bash
+pip install cookiecutter
+cookiecutter gh:kovan/hy --directory cookiecutter-hy
+```
 
-The Poetry and Hatch plugins are also on PyPI:
-[poetry-hy-plugin](https://pypi.org/project/poetry-hy-plugin/) |
-[hatch-hy](https://pypi.org/project/hatch-hy/)
+You'll be prompted for:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `project_name` | My Hy Project | Human-readable project name |
+| `project_slug` | my-hy-project | Package/directory name |
+| `module_name` | my_hy_project | Python import name |
+| `description` | A Hy project | Short description |
+| `author` | Your Name | Author name |
+| `version` | 0.1.0 | Initial version |
 
 ## Generated Structure
 
-All templates produce the same project:
-
 ```
-my-project/
-├── pyproject.toml          # hy dependency, *.hy package-data
+my-hy-project/
+├── pyproject.toml
 ├── README.md
 ├── LICENSE
 ├── src/
-│   └── my_project/
+│   └── my_hy_project/
 │       ├── __init__.hy
 │       └── main.hy
 └── tests/
-    ├── conftest.py         # pytest discovery for .hy files
     └── test_main.hy
 ```
 
-## Why?
+## Getting Started
 
-Starting a Hy project requires non-obvious boilerplate:
-- `*.hy` in `package-data` so `.hy` files get included in wheels
-- `hy` as both a build and runtime dependency
-- `conftest.py` with a `pytest_collect_file` hook for `.hy` test discovery
-
-These templates handle all of that.
+```bash
+cd my-hy-project
+pip install -e .
+hy src/my_hy_project/main.hy
+```
