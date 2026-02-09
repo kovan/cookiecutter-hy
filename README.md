@@ -24,12 +24,12 @@ my-project/
 ├── pyproject.toml          # hy dependency, *.hy package-data
 ├── README.md
 ├── LICENSE
-├── conftest.py             # pytest discovery for .hy files
 ├── src/
 │   └── my_project/
 │       ├── __init__.hy
 │       └── main.hy
 └── tests/
+    ├── conftest.py         # pytest discovery for .hy files
     └── test_main.hy
 ```
 

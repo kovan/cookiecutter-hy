@@ -30,7 +30,7 @@ def test_generates_correct_structure(tmp_path):
     assert (project_dir / "pyproject.toml").exists()
     assert (project_dir / "README.md").exists()
     assert (project_dir / "LICENSE").exists()
-    assert (project_dir / "conftest.py").exists()
+    assert (project_dir / "tests" / "conftest.py").exists()
     assert (project_dir / "src" / module_name / "main.hy").exists()
     assert (project_dir / "tests" / "test_main.hy").exists()
 
